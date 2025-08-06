@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>$GRUG - GRUG NO THINK. GRUG BUY. GRUG RICH.</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fredoka+One:wght@400&family=Comic+Neue:wght@400;700&display=swap');
+        
+        .grug-font {
+            font-family: 'Fredoka One', cursive;
+        }
+        
+        .comic-font {
+            font-family: 'Comic Neue', cursive;
+        }
+        
+        .cave-bg {
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(139, 69, 19, 0.8) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(160, 82, 45, 0.8) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(205, 133, 63, 0.6) 0%, transparent 50%),
+                linear-gradient(135deg, #2D1810 0%, #4A2C17 25%, #6B3E1A 50%, #8B4513 75%, #A0522D 100%);
+            background-size: 800px 800px, 600px 600px, 400px 400px, 100% 100%;
+            background-attachment: fixed;
+            position: relative;
+        }
+        
+        .cave-bg::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(2px 2px at 20px 30px, rgba(255, 215, 0, 0.3), transparent),
+                radial-gradient(2px 2px at 40px 70px, rgba(255, 165, 0, 0.2), transparent),
+                radial-gradient(1px 1px at 90px 40px, rgba(255, 255, 255, 0.4), transparent),
+                radial-gradient(1px 1px at 130px 80px, rgba(255, 215, 0, 0.3), transparent),
+                radial-gradient(2px 2px at 160px 30px, rgba(255, 165, 0, 0.2), transparent);
+            background-repeat: repeat;
+            background-size: 200px 100px;
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        .rock-texture {
+            background: linear-gradient(135deg, rgba(0,0,0,0.2) 0%, rgba(255,255,255,0.1) 50%, rgba(0,0,0,0.2) 100%);
+            border: 2px solid rgba(255,255,255,0.2);
+        }
+        
+        .bounce-slow {
+            animation: bounce 3s infinite;
+        }
+        
+        .wiggle {
+            animation: wiggle 2s ease-in-out infinite;
+        }
+        
+        @keyframes wiggle {
+            0%, 100% { transform: rotate(-3deg); }
+            50% { transform: rotate(3deg); }
+        }
+        
+        .glow {
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+        }
+        
+        .button-hover:hover {
+            transform: scale(1.1);
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+<body class="cave-bg min-h-screen">
+    <!-- Header -->
+    <header class="text-center py-8">
+        <div class="bounce-slow inline-block mb-6">
+            <img src="https://i.imgur.com/oTJCatF.png" alt="GRUG" class="w-64 h-64 md:w-80 md:h-80 mx-auto">
+        </div>
+        <div class="comic-font text-2xl md:text-3xl text-orange-200 font-bold mb-8">
+            GRUG NO THINK. GRUG BUY. GRUG RICH.
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 max-w-4xl">
+        <!-- Grug Character -->
+        <div class="text-center mb-12">
+            <div class="bg-orange-800 rock-texture rounded-3xl p-8 mx-auto max-w-2xl">
+                <p class="comic-font text-xl md:text-2xl text-yellow-100 font-bold leading-relaxed">
+                    GRUG SIMPLE CAVEMAN. GRUG SEE SHINY COIN. GRUG WANT COIN. 
+                    <br><br>
+                    GRUG NO UNDERSTAND COMPLICATED THINGS. GRUG JUST BUY AND HOLD! 
+                    <br><br>
+                    🦴 GRUG MAKE FIRE WITH MONEY! 🔥
+                </p>
+            </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="grid md:grid-cols-3 gap-6 mb-12">
+            <!-- Telegram Button -->
+            <button onclick="window.open('https://t.me/grugcommunity', '_blank')" 
+                    class="button-hover bg-blue-500 hover:bg-blue-600 text-white font-bold py-6 px-8 rounded-2xl text-xl comic-font border-4 border-blue-700 glow transform transition-all duration-300">
+                <div class="text-4xl mb-2">📱</div>
+                GRUG TALK IN CAVE
+                <div class="text-sm mt-1">Join Telegram</div>
+            </button>
+
+            <!-- X/Twitter Button -->
+            <button onclick="window.open('https://x.com/grugtoken', '_blank')" 
+                    class="button-hover bg-black hover:bg-gray-800 text-white font-bold py-6 px-8 rounded-2xl text-xl comic-font border-4 border-gray-600 glow transform transition-all duration-300">
+                <div class="text-4xl mb-2">🐦</div>
+                GRUG TWEET LOUD
+                <div class="text-sm mt-1">Follow on X</div>
+            </button>
+
+            <!-- Chart Button -->
+            <button onclick="window.open('https://dexscreener.com/ethereum/grugtoken', '_blank')" 
+                    class="button-hover bg-green-500 hover:bg-green-600 text-white font-bold py-6 px-8 rounded-2xl text-xl comic-font border-4 border-green-700 glow transform transition-all duration-300">
+                <div class="text-4xl mb-2">📈</div>
+                GRUG SEE NUMBERS
+                <div class="text-sm mt-1">View Chart</div>
+            </button>
+        </div>
+
+        <!-- Contract Address -->
+        <div class="bg-yellow-600 rock-texture rounded-2xl p-6 mb-12">
+            <h3 class="grug-font text-2xl text-brown-900 mb-4 text-center">GRUG CONTRACT ADDRESS:</h3>
+            <div class="bg-yellow-200 rounded-lg p-4 border-2 border-yellow-800">
+                <div class="flex items-center justify-between">
+                    <code class="comic-font text-sm md:text-base text-brown-800 font-bold break-all" id="contractAddress">
+                        0x1234567890abcdef1234567890abcdef12345678
+                    </code>
+                    <button onclick="copyContract()" 
+                            class="ml-4 bg-brown-600 hover:bg-brown-700 text-yellow-100 px-4 py-2 rounded-lg comic-font font-bold text-sm">
+                        📋 COPY
+                    </button>
+                </div>
+            </div>
+            <p class="comic-font text-brown-800 text-center mt-3 font-bold">
+                GRUG ALWAYS VERIFY CONTRACT! GRUG NO WANT FAKE ROCK! 🪨
+            </p>
+        </div>
+
+        <!-- Tokenomics -->
+        <div class="bg-orange-700 rock-texture rounded-2xl p-8 mb-12">
+            <h3 class="grug-font text-3xl text-yellow-300 mb-6 text-center">GRUG SIMPLE RULES:</h3>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="text-center">
+                    <div class="text-5xl mb-3">🔥</div>
+                    <h4 class="comic-font text-xl text-yellow-200 font-bold mb-2">NO TAX</h4>
+                    <p class="comic-font text-orange-200">GRUG NO LIKE COMPLICATED FEES</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-5xl mb-3">🦴</div>
+                    <h4 class="comic-font text-xl text-yellow-200 font-bold mb-2">FAIR LAUNCH</h4>
+                    <p class="comic-font text-orange-200">ALL GRUG GET SAME CHANCE</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-center py-8">
+        <div class="text-6xl">🦕🦴🔥</div>
+    </footer>
+
+    <script>
+        function copyContract() {
+            const contractText = document.getElementById('contractAddress').textContent;
+            navigator.clipboard.writeText(contractText).then(function() {
+                alert('GRUG COPY CONTRACT! 🦴');
+            });
+        }
+
+
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'96afc06b454102e1',t:'MTc1NDQ5NjA3My4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

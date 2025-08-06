@@ -16,16 +16,36 @@
         .comic-font {
             font-family: 'Comic Neue', cursive;
         }
+        
         .cave-bg {
-          background-image: url('https://i.imgur.com/pw1y42B.jpeg'); /* ← remplace par ton vrai lien */
-          background-size: cover;
-          background-position: center;
-          background-repeat: no-repeat;
-          background-attachment: fixed; /* optionnel : effet "parallax" */
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(139, 69, 19, 0.8) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(160, 82, 45, 0.8) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(205, 133, 63, 0.6) 0%, transparent 50%),
+                linear-gradient(135deg, #2D1810 0%, #4A2C17 25%, #6B3E1A 50%, #8B4513 75%, #A0522D 100%);
+            background-size: 800px 800px, 600px 600px, 400px 400px, 100% 100%;
+            background-attachment: fixed;
+            position: relative;
         }
-
         
-        
+        .cave-bg::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(2px 2px at 20px 30px, rgba(255, 215, 0, 0.3), transparent),
+                radial-gradient(2px 2px at 40px 70px, rgba(255, 165, 0, 0.2), transparent),
+                radial-gradient(1px 1px at 90px 40px, rgba(255, 255, 255, 0.4), transparent),
+                radial-gradient(1px 1px at 130px 80px, rgba(255, 215, 0, 0.3), transparent),
+                radial-gradient(2px 2px at 160px 30px, rgba(255, 165, 0, 0.2), transparent);
+            background-repeat: repeat;
+            background-size: 200px 100px;
+            pointer-events: none;
+            z-index: -1;
+        }
         
         .rock-texture {
             background: linear-gradient(135deg, rgba(0,0,0,0.2) 0%, rgba(255,255,255,0.1) 50%, rgba(0,0,0,0.2) 100%);
@@ -160,16 +180,4 @@
     </script>
 <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'96afc06b454102e1',t:'MTc1NDQ5NjA3My4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
 

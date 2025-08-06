@@ -20,23 +20,22 @@
         .cave-bg {
             background: 
                 /* Couche de bruit pour la texture */
-                radial-gradient(circle at 20% 80%, rgba(139, 69, 19, 0.3) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(101, 67, 33, 0.4) 0%, transparent 50%),
-                radial-gradient(circle at 40% 40%, rgba(160, 82, 45, 0.2) 0%, transparent 50%),
+                radial-gradient(circle at 20% 80%, rgba(139, 69, 19, 0.25) 0%, transparent 60%),
+                radial-gradient(circle at 80% 20%, rgba(101, 67, 33, 0.3) 0%, transparent 60%),
+                radial-gradient(circle at 40% 40%, rgba(160, 82, 45, 0.15) 0%, transparent 60%),
                 
-                /* Formations rocheuses */
-                radial-gradient(ellipse at 10% 0%, rgba(62, 39, 35, 0.8) 0%, transparent 60%),
-                radial-gradient(ellipse at 90% 0%, rgba(62, 39, 35, 0.7) 0%, transparent 60%),
-                radial-gradient(ellipse at 30% 100%, rgba(62, 39, 35, 0.6) 0%, transparent 70%),
-                radial-gradient(ellipse at 70% 100%, rgba(62, 39, 35, 0.6) 0%, transparent 70%),
+                /* Formations rocheuses plus subtiles */
+                radial-gradient(ellipse at 10% 0%, rgba(62, 39, 35, 0.6) 0%, transparent 70%),
+                radial-gradient(ellipse at 90% 0%, rgba(62, 39, 35, 0.5) 0%, transparent 70%),
+                radial-gradient(ellipse at 30% 100%, rgba(62, 39, 35, 0.4) 0%, transparent 80%),
+                radial-gradient(ellipse at 70% 100%, rgba(62, 39, 35, 0.4) 0%, transparent 80%),
                 
-                /* Gradient principal de la caverne */
-                radial-gradient(ellipse at center, rgba(92, 51, 23, 0.9) 0%, rgba(41, 24, 14, 0.95) 40%, rgba(20, 12, 8, 1) 100%),
+                /* Gradient principal plus doux */
+                radial-gradient(ellipse at center, rgba(92, 51, 23, 0.7) 0%, rgba(41, 24, 14, 0.85) 50%, rgba(20, 12, 8, 0.95) 100%),
                 
-                /* Base sombre */
-                linear-gradient(135deg, #1a0f0a 0%, #2d1810 50%, #1a0f0a 100%);
+                /* Base plus claire */
+                linear-gradient(135deg, #2a1810 0%, #3d2520 50%, #2a1810 100%);
             
-            /* Animation subtile de scintillement pour simuler l'humidité */
             position: relative;
         }
         
@@ -48,10 +47,10 @@
             right: 0;
             bottom: 0;
             background: 
-                radial-gradient(circle at 25% 30%, rgba(255, 235, 205, 0.05) 0%, transparent 40%),
-                radial-gradient(circle at 75% 70%, rgba(255, 235, 205, 0.03) 0%, transparent 30%),
-                radial-gradient(circle at 50% 50%, rgba(255, 248, 220, 0.02) 0%, transparent 50%);
-            animation: caveShimmer 8s ease-in-out infinite alternate;
+                radial-gradient(circle at 25% 30%, rgba(255, 235, 205, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 75% 70%, rgba(255, 235, 205, 0.06) 0%, transparent 40%),
+                radial-gradient(circle at 50% 50%, rgba(255, 248, 220, 0.04) 0%, transparent 60%);
+            animation: caveShimmer 10s ease-in-out infinite alternate;
             pointer-events: none;
         }
         
@@ -63,47 +62,32 @@
             right: 0;
             bottom: 0;
             background: 
-                /* Stalactites suggérées */
-                linear-gradient(180deg, rgba(62, 39, 35, 0.4) 0%, transparent 15%),
-                /* Texture rocheuse subtile */
+                linear-gradient(180deg, rgba(62, 39, 35, 0.2) 0%, transparent 20%),
                 repeating-linear-gradient(
                     45deg,
-                    rgba(139, 69, 19, 0.05) 0px,
-                    rgba(139, 69, 19, 0.05) 1px,
+                    rgba(139, 69, 19, 0.03) 0px,
+                    rgba(139, 69, 19, 0.03) 1px,
                     transparent 1px,
-                    transparent 20px
+                    transparent 25px
                 );
             pointer-events: none;
         }
         
         @keyframes caveShimmer {
-            0% {
-                opacity: 0.6;
-            }
-            100% {
-                opacity: 1;
-            }
-        }
-        
-        /* Variante plus sombre pour une caverne profonde */
-        .cave-bg.deep {
-            background: 
-                radial-gradient(ellipse at center, rgba(51, 25, 12, 0.9) 0%, rgba(25, 12, 6, 0.95) 40%, rgba(12, 6, 3, 1) 100%),
-                linear-gradient(135deg, #0f0805 0%, #1a0f0a 50%, #0f0805 100%);
-        }
-        
-        /* Variante avec plus de couleurs chaudes pour une caverne éclairée */
-        .cave-bg.warm {
-            background: 
-                radial-gradient(circle at 20% 80%, rgba(205, 133, 63, 0.3) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(160, 82, 45, 0.4) 0%, transparent 50%),
-                radial-gradient(ellipse at center, rgba(139, 69, 19, 0.8) 0%, rgba(62, 39, 35, 0.9) 40%, rgba(41, 24, 14, 1) 100%),
-                linear-gradient(135deg, #2d1810 0%, #3d2317 50%, #2d1810 100%);
+            0% { opacity: 0.8; }
+            100% { opacity: 1; }
         }
         
         .rock-texture {
-            background: linear-gradient(135deg, rgba(0,0,0,0.2) 0%, rgba(255,255,255,0.1) 50%, rgba(0,0,0,0.2) 100%);
-            border: 2px solid rgba(255,255,255,0.2);
+            background: linear-gradient(135deg, rgba(0,0,0,0.15) 0%, rgba(255,255,255,0.08) 50%, rgba(0,0,0,0.15) 100%);
+            border: 2px solid rgba(255,255,255,0.15);
+            backdrop-filter: blur(2px);
+        }
+        
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
         
         .bounce-slow {
@@ -115,126 +99,176 @@
         }
         
         @keyframes wiggle {
-            0%, 100% { transform: rotate(-3deg); }
-            50% { transform: rotate(3deg); }
+            0%, 100% { transform: rotate(-2deg); }
+            50% { transform: rotate(2deg); }
         }
         
         .glow {
-            box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+            box-shadow: 0 0 30px rgba(255, 215, 0, 0.4);
         }
         
         .button-hover:hover {
-            transform: scale(1.1);
-            transition: all 0.3s ease;
+            transform: scale(1.05) translateY(-2px);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+        
+        .floating {
+            animation: floating 4s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .fade-in {
+            animation: fadeIn 1s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .section-spacing {
+            margin-bottom: 8rem;
+        }
+        
+        @media (max-width: 768px) {
+            .section-spacing {
+                margin-bottom: 6rem;
+            }
         }
     </style>
 </head>
 <body class="cave-bg min-h-screen">
-    <!-- Header -->
-    <header class="text-center py-8">
-        <div class="bounce-slow inline-block mb-6">
-            <img src="https://i.imgur.com/oTJCatF.png" alt="GRUG" class="w-64 h-64 md:w-80 md:h-80 mx-auto">
+    <!-- Header avec plus d'espace -->
+    <header class="text-center py-16 md:py-24 fade-in">
+        <div class="bounce-slow inline-block mb-8">
+            <img src="https://i.imgur.com/oTJCatF.png" alt="GRUG" class="w-56 h-56 md:w-72 md:h-72 lg:w-80 lg:h-80 mx-auto drop-shadow-2xl">
         </div>
-        <div class="comic-font text-2xl md:text-3xl text-orange-200 font-bold mb-8">
+        <div class="comic-font text-3xl md:text-4xl lg:text-5xl text-orange-200 font-bold mb-4 drop-shadow-lg">
             GRUG NO THINK. GRUG BUY. GRUG RICH.
+        </div>
+        <div class="text-orange-300 text-lg md:text-xl comic-font opacity-80">
+            🦴 Simple Caveman. Smart Investment. 🔥
         </div>
     </header>
 
-    <!-- Main Content -->
-    <main class="container mx-auto px-4 max-w-4xl">
-        <!-- Grug Character -->
-        <div class="text-center mb-12">
-            <div class="bg-orange-800 rock-texture rounded-3xl p-8 mx-auto max-w-2xl">
-                <p class="comic-font text-xl md:text-2xl text-yellow-100 font-bold leading-relaxed">
+    <!-- Main Content avec espacement amélioré -->
+    <main class="container mx-auto px-6 md:px-8 max-w-5xl">
+        <!-- Grug Character avec plus d'espace -->
+        <div class="text-center section-spacing fade-in">
+            <div class="glass-effect bg-gradient-to-br from-orange-800/60 to-orange-900/60 rounded-3xl p-8 md:p-12 mx-auto max-w-3xl shadow-2xl">
+                <p class="comic-font text-xl md:text-2xl lg:text-3xl text-yellow-100 font-bold leading-relaxed">
                     GRUG SIMPLE CAVEMAN. GRUG SEE SHINY COIN. GRUG WANT COIN. 
                     <br><br>
                     GRUG NO UNDERSTAND COMPLICATED THINGS. GRUG JUST BUY AND HOLD! 
                     <br><br>
-                    🦴 GRUG MAKE FIRE WITH MONEY! 🔥
+                    <span class="text-4xl">🦴</span> GRUG MAKE FIRE WITH MONEY! <span class="text-4xl">🔥</span>
                 </p>
             </div>
         </div>
 
-        <!-- Action Buttons -->
-        <div class="grid md:grid-cols-3 gap-6 mb-12">
+        <!-- Action Buttons avec plus d'espace et meilleur design -->
+        <div class="grid md:grid-cols-3 gap-8 lg:gap-12 section-spacing fade-in">
             <!-- Telegram Button -->
-            <button onclick="window.open('https://t.me/+ENIpxVQ8MXdlNjU0', '_blank')" 
-                    class="button-hover bg-blue-500 hover:bg-blue-600 text-white font-bold py-6 px-8 rounded-2xl text-xl comic-font border-4 border-blue-700 glow transform transition-all duration-300">
-                <div class="text-4xl mb-2">📱</div>
-                GRUG TALK IN CAVE
-                <div class="text-sm mt-1">Join Telegram</div>
-            </button>
+            <div class="floating">
+                <button onclick="window.open('https://t.me/+ENIpxVQ8MXdlNjU0', '_blank')" 
+                        class="w-full button-hover bg-gradient-to-br from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-bold py-8 px-6 rounded-3xl text-xl comic-font border-2 border-blue-400/50 shadow-xl">
+                    <div class="text-5xl mb-4">📱</div>
+                    <div class="text-xl mb-2">GRUG TALK IN CAVE</div>
+                    <div class="text-sm opacity-80">Join Telegram</div>
+                </button>
+            </div>
 
             <!-- X/Twitter Button -->
-            <button onclick="window.open('https://x.com/solana_grug', '_blank')" 
-                    class="button-hover bg-black hover:bg-gray-800 text-white font-bold py-6 px-8 rounded-2xl text-xl comic-font border-4 border-gray-600 glow transform transition-all duration-300">
-                <div class="text-4xl mb-2">🐦</div>
-                GRUG TWEET LOUD
-                <div class="text-sm mt-1">Follow on X</div>
-            </button>
+            <div class="floating" style="animation-delay: 0.5s;">
+                <button onclick="window.open('https://x.com/solana_grug', '_blank')" 
+                        class="w-full button-hover bg-gradient-to-br from-gray-800 to-black hover:from-gray-700 hover:to-gray-900 text-white font-bold py-8 px-6 rounded-3xl text-xl comic-font border-2 border-gray-600/50 shadow-xl">
+                    <div class="text-5xl mb-4">🐦</div>
+                    <div class="text-xl mb-2">GRUG TWEET LOUD</div>
+                    <div class="text-sm opacity-80">Follow on X</div>
+                </button>
+            </div>
 
             <!-- Chart Button -->
-            <button onclick="window.open('https://dexscreener.com/ethereum/grugtoken', '_blank')" 
-                    class="button-hover bg-green-500 hover:bg-green-600 text-white font-bold py-6 px-8 rounded-2xl text-xl comic-font border-4 border-green-700 glow transform transition-all duration-300">
-                <div class="text-4xl mb-2">📈</div>
-                GRUG SEE NUMBERS
-                <div class="text-sm mt-1">View Chart</div>
-            </button>
+            <div class="floating" style="animation-delay: 1s;">
+                <button onclick="window.open('https://dexscreener.com/ethereum/grugtoken', '_blank')" 
+                        class="w-full button-hover bg-gradient-to-br from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-bold py-8 px-6 rounded-3xl text-xl comic-font border-2 border-green-400/50 shadow-xl">
+                    <div class="text-5xl mb-4">📈</div>
+                    <div class="text-xl mb-2">GRUG SEE NUMBERS</div>
+                    <div class="text-sm opacity-80">View Chart</div>
+                </button>
+            </div>
         </div>
 
-        <!-- Contract Address -->
-        <div class="bg-yellow-600 rock-texture rounded-2xl p-6 mb-12">
-            <h3 class="grug-font text-2xl text-brown-900 mb-4 text-center">GRUG CONTRACT ADDRESS:</h3>
-            <div class="bg-yellow-200 rounded-lg p-4 border-2 border-yellow-800">
-                <div class="flex items-center justify-between">
-                    <code class="comic-font text-sm md:text-base text-brown-800 font-bold break-all" id="contractAddress">
+        <!-- Contract Address avec design amélioré -->
+        <div class="glass-effect bg-gradient-to-br from-yellow-600/70 to-yellow-700/70 rounded-3xl p-8 md:p-10 section-spacing shadow-2xl fade-in">
+            <h3 class="grug-font text-2xl md:text-3xl text-yellow-100 mb-6 text-center drop-shadow-lg">
+                GRUG CONTRACT ADDRESS:
+            </h3>
+            <div class="bg-yellow-200/90 rounded-2xl p-6 border-2 border-yellow-800/50 shadow-inner">
+                <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+                    <code class="comic-font text-base md:text-lg text-brown-800 font-bold break-all text-center md:text-left" id="contractAddress">
                         NO COIN YET
                     </code>
                     <button onclick="copyContract()" 
-                            class="ml-4 bg-brown-600 hover:bg-brown-700 text-brown-100 px-4 py-2 rounded-lg comic-font font-bold text-sm">
+                            class="flex-shrink-0 bg-brown-600 hover:bg-brown-700 text-brown-100 px-6 py-3 rounded-xl comic-font font-bold text-sm hover:scale-105 transition-all duration-300 shadow-lg">
                         📋 COPY
                     </button>
                 </div>
             </div>
-            <p class="comic-font text-brown-800 text-center mt-3 font-bold">
+            <p class="comic-font text-yellow-100 text-center mt-6 font-bold text-lg">
                 GRUG ALWAYS VERIFY CONTRACT! GRUG NO WANT FAKE ROCK! 🪨
             </p>
         </div>
 
-        <!-- Tokenomics -->
-        <div class="bg-orange-700 rock-texture rounded-2xl p-8 mb-12">
-            <h3 class="grug-font text-3xl text-yellow-300 mb-6 text-center">GRUG SIMPLE RULES:</h3>
-            <div class="grid md:grid-cols-2 gap-6">
-                <div class="text-center">
-                    <div class="text-5xl mb-3">🔥</div>
-                    <h4 class="comic-font text-xl text-yellow-200 font-bold mb-2">NO TAX</h4>
-                    <p class="comic-font text-orange-200">GRUG NO LIKE COMPLICATED FEES</p>
+        <!-- Tokenomics avec plus d'espace -->
+        <div class="glass-effect bg-gradient-to-br from-orange-700/70 to-orange-800/70 rounded-3xl p-10 md:p-12 section-spacing shadow-2xl fade-in">
+            <h3 class="grug-font text-3xl md:text-4xl text-yellow-300 mb-10 text-center drop-shadow-lg">
+                GRUG SIMPLE RULES:
+            </h3>
+            <div class="grid md:grid-cols-2 gap-8 lg:gap-12">
+                <div class="text-center p-6 rounded-2xl bg-white/5">
+                    <div class="text-6xl mb-6">🔥</div>
+                    <h4 class="comic-font text-2xl text-yellow-200 font-bold mb-4">NO TAX</h4>
+                    <p class="comic-font text-lg text-orange-200">GRUG NO LIKE COMPLICATED FEES</p>
                 </div>
-                <div class="text-center">
-                    <div class="text-5xl mb-3">🦴</div>
-                    <h4 class="comic-font text-xl text-yellow-200 font-bold mb-2">FAIR LAUNCH</h4>
-                    <p class="comic-font text-orange-200">ALL GRUG GET SAME CHANCE</p>
+                <div class="text-center p-6 rounded-2xl bg-white/5">
+                    <div class="text-6xl mb-6">🦴</div>
+                    <h4 class="comic-font text-2xl text-yellow-200 font-bold mb-4">FAIR LAUNCH</h4>
+                    <p class="comic-font text-lg text-orange-200">ALL GRUG GET SAME CHANCE</p>
                 </div>
             </div>
         </div>
     </main>
 
-    <!-- Footer -->
-    <footer class="text-center py-8">
-        <div class="text-6xl">🦕🦴🔥</div>
+    <!-- Footer avec plus d'espace -->
+    <footer class="text-center py-16 fade-in">
+        <div class="text-7xl md:text-8xl mb-4 wiggle">🦕🦴🔥</div>
+        <div class="comic-font text-orange-300 text-lg">
+            GRUG LOVE ALL CAVE FRIENDS
+        </div>
     </footer>
 
     <script>
         function copyContract() {
             const contractText = "NO TOKEN CREATED";
             navigator.clipboard.writeText(contractText);
+            
+            // Feedback visuel
+            const button = event.target;
+            const originalText = button.innerHTML;
+            button.innerHTML = "✓ COPIED!";
+            button.classList.add("bg-green-600");
+            
+            setTimeout(() => {
+                button.innerHTML = originalText;
+                button.classList.remove("bg-green-600");
+            }, 2000);
         }
-
-
     </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'96afc06b454102e1',t:'MTc1NDQ5NjA3My4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</body>
 </html>
-
-
-
-

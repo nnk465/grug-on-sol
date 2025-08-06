@@ -140,6 +140,22 @@
                 margin-bottom: 6rem;
             }
         }
+        
+        /* Empêcher la sélection de texte partout */
+        * {
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+        
+        /* Permettre la sélection uniquement pour le contract address */
+        #contractAddress {
+            -webkit-user-select: text;
+            -moz-user-select: text;
+            -ms-user-select: text;
+            user-select: text;
+        }
     </style>
 </head>
 <body class="cave-bg min-h-screen">

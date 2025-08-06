@@ -18,40 +18,88 @@
         }
         
         .cave-bg {
-            background:
-                radial-gradient(circle at 50% 80%, rgba(255, 140, 0, 0.1) 0%, transparent 60%),
-                radial-gradient(circle at 50% 100%, rgba(255, 80, 0, 0.08) 0%, transparent 70%),
-                repeating-radial-gradient(circle at 40% 40%, #3a1f0f 0px, #2c160a 40px, #3a1f0f 80px),
-                linear-gradient(to bottom, #1e0f07 0%, #2c160a 100%);
-            background-blend-mode: overlay, overlay, multiply, normal;
-            background-size: 100% 100%, 100% 100%, 600px 600px, cover;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
+            background: 
+                /* Couche de bruit pour la texture */
+                radial-gradient(circle at 20% 80%, rgba(139, 69, 19, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(101, 67, 33, 0.4) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(160, 82, 45, 0.2) 0%, transparent 50%),
+                
+                /* Formations rocheuses */
+                radial-gradient(ellipse at 10% 0%, rgba(62, 39, 35, 0.8) 0%, transparent 60%),
+                radial-gradient(ellipse at 90% 0%, rgba(62, 39, 35, 0.7) 0%, transparent 60%),
+                radial-gradient(ellipse at 30% 100%, rgba(62, 39, 35, 0.6) 0%, transparent 70%),
+                radial-gradient(ellipse at 70% 100%, rgba(62, 39, 35, 0.6) 0%, transparent 70%),
+                
+                /* Gradient principal de la caverne */
+                radial-gradient(ellipse at center, rgba(92, 51, 23, 0.9) 0%, rgba(41, 24, 14, 0.95) 40%, rgba(20, 12, 8, 1) 100%),
+                
+                /* Base sombre */
+                linear-gradient(135deg, #1a0f0a 0%, #2d1810 50%, #1a0f0a 100%);
+            
+            /* Animation subtile de scintillement pour simuler l'humidité */
             position: relative;
         }
-
         
         .cave-bg::before {
             content: '';
-            position: fixed;
+            position: absolute;
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
-            background-image:
-                radial-gradient(3px 3px at 10% 20%, rgba(255, 215, 0, 0.07), transparent),
-                radial-gradient(2px 2px at 70% 60%, rgba(255, 165, 0, 0.05), transparent),
-                radial-gradient(4px 4px at 30% 90%, rgba(255, 140, 0, 0.08), transparent),
-                radial-gradient(1px 1px at 80% 40%, rgba(255, 255, 255, 0.04), transparent),
-                radial-gradient(3px 3px at 60% 30%, rgba(255, 215, 0, 0.06), transparent);
-            background-size: 300px 300px;
-            background-repeat: repeat;
-            opacity: 0.3;
-            z-index: -1;
+            background: 
+                radial-gradient(circle at 25% 30%, rgba(255, 235, 205, 0.05) 0%, transparent 40%),
+                radial-gradient(circle at 75% 70%, rgba(255, 235, 205, 0.03) 0%, transparent 30%),
+                radial-gradient(circle at 50% 50%, rgba(255, 248, 220, 0.02) 0%, transparent 50%);
+            animation: caveShimmer 8s ease-in-out infinite alternate;
             pointer-events: none;
-            animation: flicker 6s infinite alternate ease-in-out;
         }
-
+        
+        .cave-bg::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                /* Stalactites suggérées */
+                linear-gradient(180deg, rgba(62, 39, 35, 0.4) 0%, transparent 15%),
+                /* Texture rocheuse subtile */
+                repeating-linear-gradient(
+                    45deg,
+                    rgba(139, 69, 19, 0.05) 0px,
+                    rgba(139, 69, 19, 0.05) 1px,
+                    transparent 1px,
+                    transparent 20px
+                );
+            pointer-events: none;
+        }
+        
+        @keyframes caveShimmer {
+            0% {
+                opacity: 0.6;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+        
+        /* Variante plus sombre pour une caverne profonde */
+        .cave-bg.deep {
+            background: 
+                radial-gradient(ellipse at center, rgba(51, 25, 12, 0.9) 0%, rgba(25, 12, 6, 0.95) 40%, rgba(12, 6, 3, 1) 100%),
+                linear-gradient(135deg, #0f0805 0%, #1a0f0a 50%, #0f0805 100%);
+        }
+        
+        /* Variante avec plus de couleurs chaudes pour une caverne éclairée */
+        .cave-bg.warm {
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(205, 133, 63, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(160, 82, 45, 0.4) 0%, transparent 50%),
+                radial-gradient(ellipse at center, rgba(139, 69, 19, 0.8) 0%, rgba(62, 39, 35, 0.9) 40%, rgba(41, 24, 14, 1) 100%),
+                linear-gradient(135deg, #2d1810 0%, #3d2317 50%, #2d1810 100%);
+        }
         
         .rock-texture {
             background: linear-gradient(135deg, rgba(0,0,0,0.2) 0%, rgba(255,255,255,0.1) 50%, rgba(0,0,0,0.2) 100%);
@@ -186,6 +234,7 @@
     </script>
 <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'96afc06b454102e1',t:'MTc1NDQ5NjA3My4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
+
 
 
 
